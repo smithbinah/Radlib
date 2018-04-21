@@ -66,6 +66,9 @@
  article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
    display: block;
  }
+ story{
+   /* margin-left: 100 */
+ }
  
  body {
    margin: 0;
@@ -75,7 +78,7 @@
    line-height: 1.5;
    color: #919aa1;
    text-align: left;
-   background-color: #fff;
+   background-image: url('/img/background.png');
  }
  
  [tabindex="-1"]:focus {
