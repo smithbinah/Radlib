@@ -1,6 +1,14 @@
 <div>
 <h3 align="center"><%= "Title: #{@title}"%></h3>
+<p>
+   <%=
+        story_file = File.open(Dir.pwd+ "/Radlib/" + "#{@title}" << ".txt","r"){  |file|
+            file.readline
+        }
+    %> 
+</p>
 <br/>
+
 </div>
 
 
