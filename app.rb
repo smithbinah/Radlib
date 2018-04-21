@@ -1,11 +1,10 @@
-get "/" do
+require "sinatra"
 
+get "/" do
 end
 
 get "/upload" do
-
 end
 
-get "/:story" do
-
+get "/:story" do |story|
 end
