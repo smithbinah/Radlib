@@ -1,11 +1,16 @@
 require "sinatra"
 
 get "/" do
-  erb("test")
+  erb("")
 end
 
 get "/upload" do
 end
 
 get "/:story" do
+  @title = params[:story]
+  erb(:story)
+end
+
+post "/:story" do
 end
