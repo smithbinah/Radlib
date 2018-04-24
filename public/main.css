@@ -66,8 +66,8 @@
  article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
    display: block;
  }
- story{
-   /* margin-left: 100 */
+ div.story{
+    
  }
  
  body {

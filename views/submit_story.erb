@@ -8,7 +8,7 @@
     story_file = File.open(Dir.pwd << "/#{@title}" << ".txt", "r") { |file|
     line = file.readline
     new_additions = line.to_s.gsub(/(\[\w+\])/) { |part_of_speech|
-      part_of_speech = @substitute_pos[i].to_s
+      part_of_speech = "<b class=\"text-success\">" + @substitute_pos[i].to_s + "</b>"
       if i < @substitute_pos.count
         i += 1
       end
