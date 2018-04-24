@@ -4,11 +4,13 @@ set :session_secret, "session"
 # @stories = Dir.entries("uploads")
 
 get "/" do
-  erb("")
+  "Is this working?"
+  @stories = Dir.entries("uploads")[2..-1]
+  erb(:index)
 end
 
 get "/upload" do
-  erb("")
+  erb(:upload)
 end
 
 get "/:story" do
@@ -25,23 +27,20 @@ post "/submit/story" do
   erb(:submit_story)
 end
 # post "/upload" do
+#   file_name = params["story_file"][:filename]
+#   file_contents = ""
 
-# 	file_name = params['story_file'][:filename]
-# 	file_contents = ""
+#   if File.exists?(file_name)
+#     File.open(file_name, "r") do |file|
+#       file_contents = file.read
+#     end
+#   end
 
-# 	if File.exists?(file_name)
-
-# 		File.open(file_name, 'r') do |file|
-# 			file_contents = file.read
-# 		end
-# 	end
-
-# 	if file_contents != ""
-
-# 		File.open("uploads/" + file_name, "w") do |file|
-# 			file.puts file_contents
-# 		end
-# 	end
+#   if file_contents != ""
+#     File.open("uploads/" + file_name, "w") do |file|
+#       file.puts file_contents
+#     end
+#   end
 # end
 
 # finish up when upload.erb is finished

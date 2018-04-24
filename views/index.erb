@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <h1>Current Mab Lib Stories</h1>
+  <ul>
+    <% @stories.each do |story| %>
+    <li><%= story[0...-4] %></li>
+    <% end %>
+  </ul>
+</body>
