@@ -1,7 +1,7 @@
 <div>
 <h3 align="center"><%= "Title: #{@title}"%></h3>
 <div class="container" style="Width: 400px; position: relative;  right: 350px; ">
-<form class="form-group" method="POST" action="/submit/<%= @title %>">
+<form class="form-group" method="POST" action="/submit/story">
     <%=
         story_file = File.open(Dir.pwd+ "/Radlib/" + "#{@title}" << ".txt","r"){  |file|
             line =  file.readline 

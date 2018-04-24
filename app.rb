@@ -1,6 +1,6 @@
 require "sinatra"
 
-@stories = Dir.entries("uploads")
+# @stories = Dir.entries("uploads")
 
 get "/" do
   erb("")
@@ -10,15 +10,15 @@ get "/upload" do
   erb("")
 end
 
-get "/#{:story}" do
+get "/:story" do
   @title = params[:story]
   erb(:story)
 end
 
-post "/submit/:story" do
+post "/submit/story" do
   @title = params[:story]
-  params[:story]
-  erb(:story)
+  # params[:story]
+  erb(:submit_story)
 end
 # post "/upload" do
 
