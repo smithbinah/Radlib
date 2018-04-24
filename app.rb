@@ -1,5 +1,6 @@
 require "sinatra"
-
+enable :sessions
+set :session_secret, "session"
 # @stories = Dir.entries("uploads")
 
 get "/" do
@@ -12,12 +13,15 @@ end
 
 get "/:story" do
   @title = params[:story]
+  session["title"] = @title
   erb(:story)
 end
 
 post "/submit/story" do
-  @title = params[:story]
+  @substitute_pos = params.values
+  @title = session[:title].inspect
   # params[:story]
+
   erb(:submit_story)
 end
 # post "/upload" do

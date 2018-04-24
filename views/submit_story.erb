@@ -1,3 +1,21 @@
 <div>
-<%= @title%>
+<h2 align="center"><%= @title.to_s.gsub!(/^\"|\"?$/,'')%></h2>
+<br/>
+<p class="text-primary" align="center">
+<%=  i = 0
+    # temp_title = @title
+    # temp_title.to_s.gsub(/^\"|\"?$/,'')
+    story_file = File.open(Dir.pwd << "/#{@title}" << ".txt", "r") { |file|
+    line = file.readline
+    new_additions = line.to_s.gsub(/(\[\w+\])/) { |part_of_speech|
+      part_of_speech = @substitute_pos[i].to_s
+      if i < @substitute_pos.count
+        i += 1
+      end
+      part_of_speech
+    }
+    new_additions
+  }
+  %>
+  </p>
 </div>
