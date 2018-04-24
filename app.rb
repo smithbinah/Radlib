@@ -17,7 +17,7 @@ end
 
 post "/submit/:story" do
   @title = params[:story]
-  # params[:story]
+  params[:story]
   erb(:story)
 end
 # finish up when upload.erb is finished
