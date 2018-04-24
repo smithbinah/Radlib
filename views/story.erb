@@ -1,5 +1,7 @@
 <div>
 <h3 align="center"><%= "Title: #{@title}"%></h3>
+<div class="container" style="Width: 400px; position: relative;  right: 350px; ">
+<form class="form-group" method="POST" action="/submit/<%= @title %>">
     <%=
         story_file = File.open(Dir.pwd+ "/Radlib/" + "#{@title}" << ".txt","r"){  |file|
             line =  file.readline 
@@ -9,12 +11,8 @@
                pos_name = part_of_speech 
                part_of_speech =   
                " 
-               <div class=\"container\" style=\"Width: 400px; position: relative;  right: 350px; \">
-               <form class=\"form-group\" method=\"POST\" action=\"/:story\">
                 <label class=\"col-form-label-sm\">Enter #{pos_name}:</label>
                 <input class=\"form-control form-control-sm\ type=\"text\"></input>
-               </form> 
-               </div>
                "
                
             }
@@ -22,6 +20,9 @@
         }
 
     %> 
+        <input type="submit">
+     </form> 
+    </div>
 <br/>
 
 </div>

@@ -5,6 +5,7 @@ get "/" do
 end
 
 get "/upload" do
+  erb("")
 end
 
 get "/:story" do
@@ -12,5 +13,8 @@ get "/:story" do
   erb(:story)
 end
 
-post "/:story" do
+post "/submit/:story" do
+  @title = params[:story]
+  # params[:story]
+  erb(:story)
 end
