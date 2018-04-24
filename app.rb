@@ -4,7 +4,7 @@ require "sinatra"
 
 get "/" do
   "Is this working?"
-  @stories = Dir.entries("uploads")
+  @stories = Dir.entries("uploads")[2..-1]
   erb(:index)
 end
 
