@@ -5,6 +5,7 @@ set :session_secret, "session"
 
 get "/" do
   "Is this working?"
+  @toggle = false
   @stories = Dir.entries("uploads")[2..-1]
   erb(:index)
 end

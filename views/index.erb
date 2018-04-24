@@ -2,10 +2,10 @@
 <head>
 </head>
 <body>
-  <h1>Current Mab Lib Stories</h1>
-  <ul>
+  <h1 align="center">Current Mab Lib Stories</h1>
+  <ul class="list-group">
     <% @stories.each do |story| %>
-    <li><%= story[0...-4] %></li>
+    <li class="list-group-item list-group-item-action"><%= story[0...-4] %></li>
     <% end %>
   </ul>
 </body>
