@@ -10,7 +10,7 @@ get "/upload" do
   erb(:upload)
 end
 
-get "/#{:story}" do
+get "/:story" do
   @title = params[:story]
   erb(:story)
 end
@@ -37,8 +37,14 @@ end
 
 # finish up when upload.erb is finished
 post "/upload" do
-  upload << params[:storyFile]
-  File.open("uploads/#{filename}", "w") do |file|
+  upload = params[:story_file][:tempfile]
+  file_name = File.basename(upload)
+  # if File.exists?(file_name)
+  #   File.open(file_name, "r") do |file|
+  #     upload = file.read
+  #   end
+  # end
+  File.open("uploads/#{file_name}", "w") do |file|
     file.puts upload
   end
 end
