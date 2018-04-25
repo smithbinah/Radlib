@@ -46,14 +46,8 @@ end
 
 # finish up when upload.erb is finished
 post "/upload" do
-  upload = params[:story_file][:tempfile]
-  file_name = File.basename(upload)
-  # if File.exists?(file_name)
-  #   File.open(file_name, "r") do |file|
-  #     upload = file.read
-  #   end
-  # end
+  file_name = params[:story_file][:filename]
   File.open("uploads/#{file_name}", "w") do |file|
-    file.puts upload
+    file.write(params[:story_file][:tempfile].read)
   end
 end

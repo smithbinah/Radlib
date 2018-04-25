@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <body>
   <h4>Upload a madlibs story</h4>
-  <form method="POST">    <input type="file" name="story_file">
+  <form method="POST" enctype="multipart/form-data">    
+    <input type="file" name="story_file">
     <input class="btn btn-primary" type="submit" name="story_submit" value="Submit File">
   </form>
 
