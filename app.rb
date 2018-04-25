@@ -49,4 +49,5 @@ post "/upload" do
   File.open("uploads/#{file_name}", "w") do |file|
     file.write(params[:story_file][:tempfile].read)
   end
+  redirect "/"
 end
