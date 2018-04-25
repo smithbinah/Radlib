@@ -1,12 +1,12 @@
 <div>
-<h3 align="center"><%= "#{@title}" Form%></h3>
+<h3 align="center"><%= @title%>Form</h3>
 <div class="container" style="Width: 400px; position: relative;  right: 350px; 
 left: 0%; 
 ">
 <form class="form-group" method="POST" action="/submit/story" style=" ">
     <%=
             i =0
-        story_file = File.open(Dir.pwd+ "/#{@title}" << ".txt","r"){  |file|
+        story_file = File.open("uploads/#{@title}" << ".txt","r"){  |file|
             line =  file.readline 
             # line.to_s.gsub(/(\w+[^\[\w+\]])/) { |original_story_words| original_story_words = "<b class=\"text-primary\">#{original_story_words}</b>"}
             new_additions = line.to_s.gsub(/(\[\w+\])/) {|part_of_speech| 
