@@ -5,7 +5,7 @@
 <%=  i = 0
     # temp_title = @title
     # temp_title.to_s.gsub(/^\"|\"?$/,'')
-    story_file = File.open(Dir.pwd << "/#{@title}" << ".txt", "r") { |file|
+    story_file = File.open("uploads/#{@title}" << ".txt", "r") { |file|
     line = file.readline
     new_additions = line.to_s.gsub(/(\[\w+\])/) { |part_of_speech|
       part_of_speech = "<b class=\"text-success\">" + @substitute_pos[i].to_s + "</b>"
